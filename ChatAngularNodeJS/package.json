@@ -1,0 +1,21 @@
+{
+  "name": "ChatAngularNodeJS",
+  "version": "0.0.0",
+  "description": "ChatAngularNodeJS",
+  "main": "app.js",
+  "author": {
+    "name": "developer",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "^4.11.2",
+    "socket.io": "^1.3.3",
+    "underscore": "^1.7.0",
+    "underscore.string": "^3.0.3",
+    "vash": "^0.7.12-1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-nodemon": "^0.4.0"
+  }
+}

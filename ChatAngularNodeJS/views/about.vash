@@ -1,0 +1,55 @@
+﻿@html.extend("layout",function(model){
+
+@html.block("body",function(model){
+
+<div>
+	<div  class="jumbotron">
+		<h2>AngularNodeJS Chat</h2>
+		<p>The application was developed using AngularJS on the client side, and on the server side using Node JS.</p>
+	</div>
+
+
+	<div class="row">
+	
+		 <div class="col-md-6">
+			 <div class="panel  panel-success">
+				<div class="panel-heading">
+					The following libraries were used on client side
+				</div>
+
+				 <ul class="list-group">
+					<li class="list-group-item">Angular JS</li>
+					<li class="list-group-item">Bootstrap</li>
+					<li class="list-group-item">Socket IO client</li>
+				<ul>
+			</div>
+		 </div>
+
+		 <div class="col-md-6">
+			<div class="panel  panel-info">
+				 <div class="panel-heading">
+						The following libraries were used on server side
+				 </div>
+
+					 <ul class="list-group">
+						<li class="list-group-item">Node JS</li>
+						<li class="list-group-item">Vash</li>
+						<li class="list-group-item">Socket IO</li>
+						<li class="list-group-item">Underscore</li>
+					<ul>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div>
+	<small>Developed by Talal Tayyab</small>
+	<a href="client/index.html">Back to chat</a>
+	</div>
+	
+</div>
+
+})
+
+})

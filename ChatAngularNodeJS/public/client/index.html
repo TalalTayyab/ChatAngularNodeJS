@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html ng-app="chatApp">
+<head>
+    <title>AngularJS - SignalR Chat</title>
+
+    <link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../content/content.css" rel="stylesheet" />
+
+    <script src="../lib/underscore/underscore.js"></script>
+    <script src="../lib/jquery/dist/jquery.js"></script>
+    <script src="../lib/angular/angular.js"></script>
+
+   
+    <script src="../lib/socket.io-client/socket.io.js"></script>
+
+    <script src="../lib/angular-scroll-glue/src/scrollglue.js"></script>
+    <script src="../scripts/clientApp.js"></script>
+
+  
+    <script>
+       
+    </script>
+  
+</head>
+
+
+<body >
+
+
+
+    <div class="container" ng-controller="chatCtrl">
+
+
+
+
+        <form name="myForm" novalidate>
+
+
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Users
+                            <span class="badge pull-right">
+                                {{users.length}}
+                            </span>
+                        </div>
+
+                        <div class="panel-body" ng-hide="isUserRegistered">
+                            <div class="form-group">
+                                <input name="userName" class="form-control" type="text" ng-model="name" maxlength="10" required valid-user-name />
+                            </div>
+                            <input type="button" class="btn btn-primary" ng-click="registerUser()" ng-disabled="myForm.userName.$invalid" value="Register User" />
+                        </div>
+
+                        <div class="panel-body" ng-show="isUserRegistered">
+                            <strong>Logged in as {{name}}</strong>
+                            <span class="pull-right">
+                                <input id="btnLogOut" name="btnLogOut" type="button" class="btn btn-primary" value="log out" ng-click="logOut()" />
+                            </span>
+
+                        </div>
+
+                        <ul class="list-group users" scroll-glue>
+
+                            <li class="list-group-item" ng-repeat="user in users">
+                                {{user.name}}
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+                <div class="col-md-8">
+
+                    <div class="panel panel-primary messages" scroll-glue>
+                        <div class="panel-heading">
+                            Messages
+                            <span class="badge pull-right">
+                                {{messages.length}}
+                            </span>
+
+
+                        </div>
+                        <div class="panel-body">
+
+                            <ul id="discussion">
+                                <li ng-repeat="message in messages">
+                                    <strong>{{message.name}}</strong> &nbsp;&nbsp; {{message.text}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="chatMessage" ng-model="text" placeholder="Enter your message here" maxlength="100" required />
+                            </div>
+
+                        </div>
+                        <div class="col-md-2">
+
+                            <input class="btn btn-primary pull-right" type="submit" value="Send" ng-click="sendMessage()" ng-disabled="isUserRegistered===false || myForm.chatMessage.$invalid" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+            <div class="row">
+
+
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Log messages
+
+
+                        </div>
+
+                        <!--log messages-->
+                        <div class="logmessages" scroll-glue>
+                            <div class="list-group-item" ng-repeat="logMsg in logMessages">
+                                {{logMsg.msg}}
+                                <span class="badge">
+                                    {{logMsg.count}}
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </form>
+
+
+        <hr />
+
+        <footer>
+            <small>
+                AngularNodeJS Chat using Socket IO - by Talal Tayyab
+                <a href="/about">About</a>
+                <span class="pull-right">
+                    Version 0.2
+                </span>
+            </small>
+
+        </footer>
+
+    </div>
+
+
+
+
+
+</body>
+</html>
