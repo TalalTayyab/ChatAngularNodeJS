@@ -15,8 +15,10 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
-public/lib/angular/
+**/public/lib/
 *.dat
+
+
 
 # Roslyn cache directories
 *.ide/
