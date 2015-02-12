@@ -5,7 +5,6 @@
     
     
     var app = angular.module('chatApp', ['luegg.directives']);
-    //app.value('$', $);
     
     //when the window unloads - send a logout click event
     window.onbeforeunload = function () {
@@ -34,22 +33,21 @@
         //get the socket
         var socket = io.connect();
         
-        function send_newClient() {
-            socket.emit("newClient");
-        }
-        
+       
         //on event handlers
         socket.on("allUsers", allUsers);
         socket.on("userRegistered", userRegistered);
         socket.on("newUser", newUser);
         socket.on("chat", chat);
         socket.on("log", logMessage);
-        //socket.on("chatMessage", chatMessage);
         
-        //send new client message
-        send_newClient();
-        
-        
+        //the event is raised when the client socket connects
+        socket.on("connect", newClient);
+       
+        //client is connected to the socket
+        function newClient() {
+            socket.emit("newClient");
+        };
         
         
         //recieve a chat message 
@@ -128,7 +126,7 @@
         //send message to server.
         $scope.sendMessage = function () {
             //chat.server.send($scope.name, $scope.text);
-            socket.emit("chat", $scope.name, $scope.text);
+            socket.emit("chatServer", $scope.name, $scope.text);
             $scope.text = "";
         };
         
@@ -138,6 +136,10 @@
             socket.emit("registerUser", $scope.name);
         }
         
+        $scope.newClient = function () {
+            send_newClient();
+        };
+        
         //send message - logout
         $scope.logOut = function () {
             //chat.server.logOut($scope.name);
@@ -145,17 +147,10 @@
             
             $scope.isUserRegistered = false;
             //refresh users list from the server
-            send_newClient();
+            $scope.newClient();
         }
         
-        
-        
-        
       
-
-
-
-
     });//controller
     
     
@@ -191,10 +186,6 @@
             }
         }
     });
-
-
-
-
 
 
 }());
