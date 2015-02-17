@@ -2,6 +2,7 @@
 var express = require("express");
 var controllers = require("./Controllers");
 var socket = require("./Socket/socket.js");
+var port = process.env.port || 3000;
 
 var app = express(); //represents our singleton app object
 
@@ -22,5 +23,5 @@ var server = http.createServer(app);
 
 socket.init(server);
 
-server.listen(8080);
+server.listen(port);
 
