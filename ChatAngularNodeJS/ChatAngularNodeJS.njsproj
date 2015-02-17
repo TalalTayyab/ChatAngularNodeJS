@@ -16,7 +16,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>12bd363a-e13e-4904-9d26-daf694c3cae3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tests\sockets\logging_out.js</StartupFile>
+    <StartupFile>server.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -40,6 +40,8 @@
     <Compile Include="Controllers\index.js" />
     <Compile Include="gruntfile.js" />
     <Compile Include="public\scripts\clientApp.js" />
+    <Compile Include="public\scripts\unitTest.js" />
+    <Compile Include="server.js" />
     <Compile Include="Socket\socket.js" />
     <Compile Include="Socket\users.js" />
     <Compile Include="tests\sockets\base.js" />
@@ -52,11 +54,10 @@
     <Compile Include="tests\sockets\logging_out.js" />
     <Compile Include="trash\socket_test2.js" />
     <Compile Include="trash\socket_test_using_mock.js" />
-    <Compile Include="tests\socket_test.js" />
     <Compile Include="tests\users_test.js" />
     <Content Include=".bowerrc" />
     <Content Include="package.json" />
-    <Content Include="public\client\clientUnitTest.html" />
+    <Content Include="public\client\unitTest.html" />
     <Content Include="public\content\content.css" />
     <Content Include="public\client\index.html" />
     <Content Include="README.md" />
