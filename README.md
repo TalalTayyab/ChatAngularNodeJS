@@ -13,3 +13,9 @@ A sample chat application using AngularJS, NodeJS and Socket IO.
     Angular JS
     Bootstrap
     Socket IO client
+
+Node JS unit testing using
+
+    Mocha
+    Chai
+    Rewire
