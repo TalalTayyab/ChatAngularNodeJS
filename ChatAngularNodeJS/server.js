@@ -22,5 +22,5 @@ var server = http.createServer(app);
 
 socket.init(server);
 
-server.listen(3000);
+server.listen(8080);
 
