@@ -65,6 +65,7 @@
     <Content Include="Web.Config" />
     <Content Include="views\about.vash" />
     <Content Include="views\layout.vash" />
+    <Content Include="Web.Debug.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
