@@ -13,11 +13,12 @@ app.set("view engine", "vash");
 app.use(express.static(__dirname + '/public'));
 
 
-//inits
+//inits//
+=======
 controllers.init(app);
 
 
-
+//server
 var server = http.createServer(app);
 
 
