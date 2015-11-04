@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));
 controllers.init(app);
 
 
-
+//server
 var server = http.createServer(app);
 
 
