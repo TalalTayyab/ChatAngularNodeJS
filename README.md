@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# ChatAngularNodeJS ** [6]
+# ChatAngularNodeJS ** [six]
 =======
 # Change 2
 # ChatAngularNodeJS **
