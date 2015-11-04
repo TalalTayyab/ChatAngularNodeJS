@@ -1,4 +1,4 @@
-# ChatAngularNodeJS ** [5]
+# ChatAngularNodeJS ** [6]
 A sample chat application using AngularJS, NodeJS and Socket IO.
 
  The following libraries were used on server side
